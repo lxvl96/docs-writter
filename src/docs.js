@@ -4,7 +4,7 @@ const path = require("path");
 const PizZip = require("pizzip");
 const ImageModule = require("docxtemplater-image-module-free");
 
-exports.CreateDoc = (input, dataSet , output) => {
+exports.CreateDoc = (input, data , output) => {
   //(templateFile, dataSet, idSolicitud) => {
   var content = fs.readFileSync(
     path.resolve(input),
@@ -27,7 +27,7 @@ exports.CreateDoc = (input, dataSet , output) => {
   var doc = new docxtemplater();
   doc.loadZip(zip);
   doc.attachModule(imageModule)
-  doc.setData(dataSet);
+  doc.setData(data);
 
   try {
     doc.render();
