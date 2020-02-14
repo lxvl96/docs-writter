@@ -2,7 +2,7 @@
   "name": "docs-writter",
   "version": "0.1.0",
   "description": "",
-  "main": "src/doc.js",
+  "main": "src/doc",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +20,6 @@
     "docxtemplater": "^3.16.9",
     "docxtemplater-image-module-free": "^1.1.1",
     "pizzip": "^3.0.6"
-  }
+  },
+  "devDependencies": {}
 }
