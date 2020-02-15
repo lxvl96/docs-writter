@@ -1,16 +1,16 @@
 # DOCS WRITTER
 
-
-_ Docs Writter es un modulo que permite crear documentos msword
+_Docs Writter es un modulo que permite crear documentos msword
 
   ## Crear Documento (.Docx)
-  _ Este metodo esta basado en docx-templater para el paso de valor para las variables integradas en el documento template.
 
-  _  **Parametros**
+  _Este metodo esta basado en docx-templater para el paso de valor para las variables integradas en el documento template.
+
+  _**Parametros**
 
   * **input** = Aqui se ingresa la ruta de almacemaniento incluido el nombre y extension del archivo, ej: ./input.docx
   * **data** = Este parametro contendra la informacion que se asignara a las variables declaradas en el archivo template 
-    _ ( template basado en docx-templater)
+    _( template basado en docx-templater)
   * **output** = Aqui se ingresa la ruta de almacemaniento incluido el nombre y extension del archivo, ej: ./output.docx
 
 ```
@@ -34,9 +34,9 @@ _ Docs Writter es un modulo que permite crear documentos msword
 
 
 ## Convertir Documento (.Docx) a PDF
-  _ Este metodo te permite convertir un documento msword (docx) a PDF.
+  _Este metodo te permite convertir un documento msword (docx) a PDF.
 
-   _  **Parametros**
+   _**Parametros**
 
   * **input** = Aqui se ingresa la ruta de almacemaniento incluido el nombre y extension del archivo, ej: ./input.docx
   * **output** = Aqui se ingresa la ruta de almacemaniento incluido el nombre y extension del archivo, ej: ./output.docx
@@ -63,13 +63,12 @@ _ Docs Writter es un modulo que permite crear documentos msword
 
 
 ## Generar Codigo QR en PNG
-  _ Este metodo te permite generar un codigo qr en tipo de image png.
+  _Este metodo te permite generar un codigo qr en tipo de image png.
 
-   _  **Parametros**
+   _**Parametros**
 
   * **name** = Aqui se ingresa el nombre que recibira el archivo de imagen del qr.
   * **stringURL** = Este parametro contendra la informacion o url que se visualizara al escanear el codigo qr
-    _ ( template basado en docx-templater)
   * **output** = Aqui se ingresa la ruta de almacemaniento incluido el nombre y extension del archivo, ej: `/public/`
 
 ```
