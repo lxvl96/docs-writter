@@ -1,6 +1,6 @@
 {
   "name": "docs-writter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "docs.js",
   "scripts": {
@@ -19,7 +19,9 @@
   "dependencies": {
     "docxtemplater": "^3.16.9",
     "docxtemplater-image-module-free": "^1.1.1",
-    "pizzip": "^3.0.6"
+    "pizzip": "^3.0.6",
+    "qr-image": "^3.2.0",
+    "word2pdf": "^1.0.8"
   },
   "devDependencies": {}
 }

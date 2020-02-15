@@ -3,22 +3,20 @@ const fs = require("fs");
 const path = require("path");
 const PizZip = require("pizzip");
 const ImageModule = require("docxtemplater-image-module-free");
+const word2pdf = require("word2pdf");
+const qrImage = require("qr-image");
 
-exports.CreateDoc = (input, data , output) => {
-  //(templateFile, dataSet, idSolicitud) => {
-  var content = fs.readFileSync(
-    path.resolve(input),
-    "binary"
-  );
+//Metodo para generar documentos msword (docx) en el cual incluye la ruta de entrada , la informacion a escribir en el documento y la ruta de salida del archivo generado
+exports.CreateDoc = (input, data, output) => {
+  var content = fs.readFileSync(path.resolve(input), "binary");
   var opts = {};
   opts.centered = false;
   opts.fileType = "docx";
-  opts.getImage = function(tagValue, tagName) {
+  opts.getImage = function (tagValue, tagName) {
     return fs.readFileSync(tagValue);
   };
 
-  
-  opts.getSize = function(img, tagValue, tagName) {
+  opts.getSize = function (img, tagValue, tagName) {
     return [120, 120];
   };
 
@@ -60,3 +58,36 @@ exports.CreateDoc = (input, data , output) => {
   );
 
 }
+
+//Metodo para convertir documentos msword (docx) a pdf
+exports.DocsToPDF = async (input, output) => {
+  try {
+    const data = await word2pdf(input)
+    fs.writeFileSync(output, data);
+  } catch (error) {
+    console.log(error);
+
+  }
+}
+
+
+//Genera codigos qr en tipo imagen con extension png 
+exports.QRCode = async (name, stringURL, pathQR) => {
+  try {
+    const image = qrImage.image(
+      JSON.stringify(stringURL),
+      { type: "png", size: 10, margin: 0.5 }
+    );
+    const optionalObj = { fileName: name, type: "png" };
+    image.pipe(
+      require("fs").createWriteStream(
+        `${pathQR}${optionalObj.fileName}.${optionalObj.type}`
+      )
+    );
+    const nameQR = `${optionalObj.fileName}.${optionalObj.type}`;
+    return nameQR;
+  } catch (error) {
+    console.log(error);
+
+  }
+};
