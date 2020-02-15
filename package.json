@@ -2,7 +2,7 @@
   "name": "docs-writter",
   "version": "0.1.1",
   "description": "",
-  "main": "src/doc",
+  "main": "docs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
